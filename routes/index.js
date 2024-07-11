@@ -15,6 +15,6 @@ router.get('/', function(req, res, next)
 router.post('/', function(req, res, next) {
   const todo = req.body.add;
   todos.push(todo);
-  res.render('/');
+  res.redirect('/');
 });
 module.exports = router;
