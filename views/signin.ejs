@@ -4,20 +4,84 @@
   <title><%= title %></title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<style>
+        * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #778899; /* 背景を少し明るいグレーに */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #ADD8E6; /* フォームの背景を白に */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+
+h2 {
+  color: #5F9EA0;
+  margin-bottom: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* フォントをお洒落に */
+}
+
+.input-group {
+  margin-bottom: 20px;
+  text-align: left; /* ラベルを左寄せ */
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #2F4F4F;
+  font-weight: bold; /* ラベルを太字に */
+}
+
+input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #007bff; /* フォーカス時に青色 */
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* フォーカス時に影を追加 */
+}
+
+
+</style>
 </head>
 <body>
 <%- include('./header'); %>
 <%- include('./error_messages'); %>
 <div class="container">
   <form action="/signin" method="post">
+    <h2>Login Page</h2>
+    <div class="input-group">
     <label>ユーザ名</label>
     <input required type="text" name="username"/>
+    </div>
     <br>
+    <div class="input-group">
     <label>パスワード</label>
     <input required type="password" name="password"/>
     <br>
     <input class="btn btn-primary" type="submit" value="Sign in"/>
-  </form>
+  </div>
+</form>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
